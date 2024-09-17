@@ -62,7 +62,7 @@ public class nave_jugador : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "enemy") {
+        if (collision.gameObject.tag == "enemy" || collision.gameObject.tag == "enemy chiquito") {
             puntuacion = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - enemy
   - ui
+  - enemy chiquito
   layers:
   - Default
   - TransparentFX

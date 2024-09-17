@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     public float velocidad = 10f;
     public float vida_util = 3f;
     public Vector3 targetVector;
+    public GameObject asteroidePequeñoPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,16 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("enemy"))
+        {
+            IncreaseScore();
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+            float randX = Random.Range(-6f,6f);
+            Vector2 spawnPosition = new Vector2(randX, 8f);
+            GameObject meteor = Instantiate(asteroidePequeñoPrefab, spawnPosition, Quaternion.identity);
+
+        }
+        else if (collision.gameObject.CompareTag("enemy chiquito"))
         {
             IncreaseScore();
             Destroy(collision.gameObject);
