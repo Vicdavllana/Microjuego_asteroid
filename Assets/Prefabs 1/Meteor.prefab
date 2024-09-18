@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2306290875723240980}
   - component: {fileID: 3810938069915395980}
   - component: {fileID: 770981392420036444}
+  - component: {fileID: 2726570170997202633}
   m_Layer: 0
   m_Name: Meteor
   m_TagString: enemy
@@ -134,3 +135,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1
   m_Center: {x: 0, y: -2, z: 0}
+--- !u!114 &2726570170997202633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6878842193708334492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eebdfd13538cf647bca9935629985eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meteoritoChiquitoPrefab: {fileID: 8085767246903647320, guid: 071c4570f8fb9024db253d39c6c24c02,
+    type: 3}
+  Movimientox: {x: 1, y: 0, z: 0}

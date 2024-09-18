@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -1475468716827586378}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,8 +101,6 @@ MonoBehaviour:
   velocidad: 10
   vida_util: 3
   targetVector: {x: 0, y: 0, z: 0}
-  "asteroidePeque\xF1oPrefab": {fileID: 8085767246903647320, guid: 071c4570f8fb9024db253d39c6c24c02,
-    type: 3}
 --- !u!65 &-1475468716827586378
 BoxCollider:
   m_ObjectHideFlags: 0

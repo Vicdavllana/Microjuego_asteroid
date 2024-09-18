@@ -589,10 +589,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asteroidesPrefab: {fileID: 6878842193708334492, guid: aa3b2be423c229246b9057ae12c69285,
     type: 3}
+  asteroidesPrefabChiquito: {fileID: 8085767246903647320, guid: 071c4570f8fb9024db253d39c6c24c02,
+    type: 3}
   spawnRatePerMin: 30
   spawnRateIncrement: 1
   xlimite: 8
-  metTimeLife: 2
+  metTimeLife: 4
 --- !u!114 &330585549
 MonoBehaviour:
   m_ObjectHideFlags: 0

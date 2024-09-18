@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 805614909644214172}
   - component: {fileID: 3902569049592907420}
   - component: {fileID: 4885695426621664016}
+  - component: {fileID: 3694731276043757319}
   m_Layer: 0
   m_Name: MeteorChiquito
   m_TagString: enemy chiquito
@@ -134,3 +135,16 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 2.7
   m_Center: {x: -0.5, y: -2, z: 0}
+--- !u!114 &3694731276043757319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8085767246903647320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff01c93a8d1aa94d840e2c7feb4fa35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vida: 5

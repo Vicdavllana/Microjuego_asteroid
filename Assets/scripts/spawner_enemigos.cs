@@ -5,11 +5,12 @@ using UnityEngine;
 public class spawner_enemigos : MonoBehaviour
 {
     public GameObject asteroidesPrefab;
+    public GameObject asteroidesPrefabChiquito;
     public float spawnRatePerMin = 30f;
     public float spawnRateIncrement = 1f;
     private float spawnNext = 0;
     public float xlimite;
-    public float metTimeLife = 2f;
+    public float metTimeLife = 4f;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,9 +30,21 @@ void Update()
             float randX = Random.Range(-xlimite, xlimite);
 
             Vector2 spawnPosition = new Vector2(randX , 8f);
+            // Crear una instancia de la clase Random
 
-           GameObject meteor = Instantiate(asteroidesPrefab, spawnPosition, Quaternion.identity);
-            Destroy(meteor, metTimeLife);       
+
+            // Generar un número aleatorio entre 1 y 2 (el segundo parámetro es exclusivo)
+            int numeroAleatorio = Random.Range(1, 3);
+            if (numeroAleatorio == 1)
+            {
+
+                GameObject meteor = Instantiate(asteroidesPrefab, spawnPosition, Quaternion.identity);
+                Destroy(meteor, metTimeLife);
+            }
+            else
+            {
+                GameObject meteorChiquito = Instantiate(asteroidesPrefabChiquito, spawnPosition, Quaternion.identity);
+            }
         }
 
 

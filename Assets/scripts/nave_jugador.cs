@@ -64,7 +64,12 @@ public class nave_jugador : MonoBehaviour
     {
         if (collision.gameObject.tag == "enemy" || collision.gameObject.tag == "enemy chiquito") {
             puntuacion = 0;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GameObject[] meteoritos = GameObject.FindGameObjectsWithTag("enemy chiquito");
+            foreach (GameObject meteorito in meteoritos)
+            {
+                Destroy(meteorito);
+            }
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
 }
