@@ -34,7 +34,7 @@ public class pausa : MonoBehaviour
         
     }
 
-    public void pausar()
+    public void pausar()// activa todo el menu de pausa y desactiva el icono de pausa
     {
         pausado = true;
        
@@ -48,7 +48,7 @@ public class pausa : MonoBehaviour
         }
         Time.timeScale = 0f;
     }
-    public void reanudar()
+    public void reanudar()//desactiva el menu de pausa y activa el icono de pausa
     {
         pausado = false;
         if (menuDePausa != null)
@@ -62,7 +62,7 @@ public class pausa : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void cerrar_jueguito()
+    public void cerrar_jueguito()//se cierra el juego
     {
         Application.Quit();
     }

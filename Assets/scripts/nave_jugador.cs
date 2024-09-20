@@ -50,8 +50,8 @@ public class nave_jugador : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-           // GameObject bala = Instantiate(bulletPrefab, pistola.transform.position, Quaternion.identity);
-            GameObject bala = ObjectPooling.Instance.sacarBala();
+           
+            GameObject bala = ObjectPooling.Instance.sacarBala();//sacamos la bala de la piscina de objetos
             bala.transform.position = pistola.transform.position;
            
             Bullet balasScript = bala.GetComponent<Bullet>();
@@ -62,7 +62,7 @@ public class nave_jugador : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision) //en una colision con un enemigo la escena se resetea
     {
         if (collision.gameObject.tag == "enemy" || collision.gameObject.tag == "enemy chiquito") {
             puntuacion = 0;

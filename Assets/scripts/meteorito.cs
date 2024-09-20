@@ -24,7 +24,7 @@ public class meteorito : MonoBehaviour
         }
     }
     
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision) // si colisiona, se transforma en dos meteoritos más chiquitos
     {
         if (collision.gameObject.CompareTag("bullet"))
         {

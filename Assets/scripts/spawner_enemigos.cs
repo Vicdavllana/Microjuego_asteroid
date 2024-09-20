@@ -19,7 +19,7 @@ public class spawner_enemigos : MonoBehaviour
 }
 
 // Update is called once per frame
-void Update()
+void Update() //spawnea meteoritos en la pantalla de juego 
     {
         if (Time.time > spawnNext)
         {

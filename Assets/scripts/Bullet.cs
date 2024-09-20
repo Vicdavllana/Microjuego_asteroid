@@ -21,18 +21,18 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         transform.Translate(velocidad * targetVector * Time.deltaTime);
-        if (transform.position.x < -10f || transform.position.x > 10f) // Si se sale de la pantalla desaparece
+        if (transform.position.x < -11f || transform.position.x > 11f) // Si se sale de la pantalla desaparece
         {
             ObjectPooling.Instance.DevolverBala(gameObject);
         }
-        if (transform.position.y < -6f || transform.position.y > 6f) // si se sale de la pantalla desaparece
+        if (transform.position.y < -7f || transform.position.y > 7f) // si se sale de la pantalla desaparece
         {
             ObjectPooling.Instance.DevolverBala(gameObject);
         }
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)//si se topa con un meteorito, devolvemos el meteorito y la bala a la piscina de objetos y actualizamos score
     {
         if(collision.gameObject.CompareTag("enemy"))
         {

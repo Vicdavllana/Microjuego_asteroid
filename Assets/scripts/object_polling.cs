@@ -31,7 +31,7 @@ public class ObjectPooling : MonoBehaviour
         if (piscina == null)
         {
             piscina = this;
-            DontDestroyOnLoad(gameObject); // Esto mantiene el pool entre escenas
+            DontDestroyOnLoad(gameObject); // Esto mantiene el pool entre escenas para que no se borren
         }
         else
         {
@@ -59,7 +59,7 @@ public class ObjectPooling : MonoBehaviour
             listaMeteoritos.Add(meteor);
         }
     }
-    private void InicializarBalasPool()
+    private void InicializarBalasPool()// inicializa la lista de balas
     {
         listaBalas = new List<GameObject>();
 
@@ -81,7 +81,7 @@ public class ObjectPooling : MonoBehaviour
         foreach (GameObject meteor in listaMeteoritos)
         {
             if (meteor != null && !meteor.activeInHierarchy) 
-            {
+            {// Restablecer la velocidad y rotación, por error anterior y activar el objeto
                 meteor.SetActive(true);
                
                 Rigidbody rb = meteor.GetComponent<Rigidbody>();
@@ -108,9 +108,8 @@ public class ObjectPooling : MonoBehaviour
         foreach (GameObject meteor in listaMeteoritosChiquitines)
         {
             if (meteor != null && !meteor.activeInHierarchy)
-            {
+            { // Restablecer la velocidad y rotación, por error anterior y activar el objeto
                 meteor.SetActive(true);
-                // Restablecer la velocidad y rotación 
                 Rigidbody rb = meteor.GetComponent<Rigidbody>();
                 rb.velocity = Vector3.zero; 
                 rb.angularVelocity = Vector3.zero; 
@@ -151,7 +150,7 @@ public class ObjectPooling : MonoBehaviour
     // Método para devolver un meteoro al pool
     public void DevolverMeteorito(GameObject meteor)
     {
-        meteor.SetActive(false); // Simplemente lo desactivamos
+        meteor.SetActive(false); // lo desactivamos
     }
 
     public void DevolverBala(GameObject bala)
