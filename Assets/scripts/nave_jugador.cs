@@ -50,8 +50,10 @@ public class nave_jugador : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GameObject bala = Instantiate(bulletPrefab, pistola.transform.position, Quaternion.identity);
-
+           // GameObject bala = Instantiate(bulletPrefab, pistola.transform.position, Quaternion.identity);
+            GameObject bala = ObjectPooling.Instance.sacarBala();
+            bala.transform.position = pistola.transform.position;
+           
             Bullet balasScript = bala.GetComponent<Bullet>();
 
             balasScript.targetVector = transform.right;
@@ -64,11 +66,7 @@ public class nave_jugador : MonoBehaviour
     {
         if (collision.gameObject.tag == "enemy" || collision.gameObject.tag == "enemy chiquito") {
             puntuacion = 0;
-            GameObject[] meteoritos = GameObject.FindGameObjectsWithTag("enemy chiquito");
-            foreach (GameObject meteorito in meteoritos)
-            {
-                Destroy(meteorito);
-            }
+            
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }

@@ -18,9 +18,12 @@ public class meteorito : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (transform.position.y < -6f) // Si se sale de la pantalla desaparece
+        {
+            ObjectPooling.Instance.DevolverMeteorito(gameObject);
+        }
     }
-
+    
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("bullet"))
@@ -30,8 +33,12 @@ public class meteorito : MonoBehaviour
             Vector3 spawnPositionNeg = transform.position - Movimientox;
 
             // Genera el nuevo meteorito
-            GameObject meteoritoChiquitoder = Instantiate(meteoritoChiquitoPrefab, spawnPositionPos, Quaternion.identity);
-            GameObject meteoritoChiquitoizq = Instantiate(meteoritoChiquitoPrefab, spawnPositionNeg, Quaternion.identity);
+           
+            GameObject meteorChiquitoder = ObjectPooling.Instance.sacarMeteoritoMini();
+            GameObject meteorChiquitoizq = ObjectPooling.Instance.sacarMeteoritoMini();
+            meteorChiquitoder.transform.position = spawnPositionPos;
+            meteorChiquitoizq.transform.position = spawnPositionNeg;
+
         }
     }
 }

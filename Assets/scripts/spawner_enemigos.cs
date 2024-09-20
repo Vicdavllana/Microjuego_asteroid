@@ -31,20 +31,12 @@ void Update()
 
             Vector2 spawnPosition = new Vector2(randX , 8f);
             // Crear una instancia de la clase Random
+            GameObject meteorito = ObjectPooling.Instance.sacarMeteorito();
 
-
-            // Generar un número aleatorio entre 1 y 2 (el segundo parámetro es exclusivo)
-            int numeroAleatorio = Random.Range(1, 3);
-            if (numeroAleatorio == 1)
-            {
-
-                GameObject meteor = Instantiate(asteroidesPrefab, spawnPosition, Quaternion.identity);
-                Destroy(meteor, metTimeLife);
-            }
-            else
-            {
-                GameObject meteorChiquito = Instantiate(asteroidesPrefabChiquito, spawnPosition, Quaternion.identity);
-            }
+            // Posicionamos el meteoro en una posición aleatoria
+            meteorito.transform.position = spawnPosition;
+            meteorito.transform.rotation = Quaternion.identity;
+            
         }
 
 

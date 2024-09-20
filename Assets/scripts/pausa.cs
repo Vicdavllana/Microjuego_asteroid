@@ -37,15 +37,28 @@ public class pausa : MonoBehaviour
     public void pausar()
     {
         pausado = true;
-        menuDePausa.SetActive(true);
-        iconoPausa.SetActive(false);
+       
+        if (menuDePausa != null)
+        {
+            menuDePausa.SetActive(true);
+        }
+        if (iconoPausa != null)
+        {
+            iconoPausa.SetActive(false);
+        }
         Time.timeScale = 0f;
     }
     public void reanudar()
     {
         pausado = false;
-        menuDePausa.SetActive(false);
-        iconoPausa.SetActive(true);
+        if (menuDePausa != null)
+        {
+            menuDePausa.SetActive(false);
+        }
+        if (iconoPausa != null)
+        {
+            iconoPausa.SetActive(true);
+        }
         Time.timeScale = 1f;
     }
 

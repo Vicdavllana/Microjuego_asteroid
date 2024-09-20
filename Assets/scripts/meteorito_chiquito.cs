@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class meteorito_chiquito : MonoBehaviour
 {
-    public float vida = 4f;
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject,vida);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (transform.position.y < -6f) // Suponiendo que -5f está fuera de la pantalla
+        {
+            ObjectPooling.Instance.DevolverMeteorito(gameObject);
+        }
     }
 }
